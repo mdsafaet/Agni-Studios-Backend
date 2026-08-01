@@ -1,0 +1,61 @@
+*.sqlite*
+
+# Laravel
+/vendor/
+/node_modules/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Laravel storage
+/storage/*.key
+/storage/logs/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+
+# Bootstrap cache
+/bootstrap/cache/*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Frontend build files
+/public/build/
+/public/hot
+
+# Testing
+.phpunit.result.cache
+
+# Laravel Telescope
+/.fleet
+/.phpunit.cache
+
+# Debug files
+*.log
+
+# Large files / archives
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+
+# Database dumps
+*.sql
+
+# Temporary files
+*.tmp
+*.temp
+
+# Filament generated files (optional)
+*.lock
