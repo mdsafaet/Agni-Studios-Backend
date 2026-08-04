@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class SeoSetting extends Model
 {
 protected $fillable = [
+    'page_key',
     'site_title',
     'meta_description',
     'meta_keywords',

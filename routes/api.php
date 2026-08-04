@@ -37,7 +37,7 @@ Route::get('/footer', [FooterController::class, 'show']);
 Route::get('/game-slides', [GameSlideController::class, 'index',]);
 Route::get('/workflow-steps', [WorkflowStepController::class, 'index']);
 Route::get('/about-section', [AboutSettingController::class, 'show']);
-Route::get('/seo-settings', [SeoSettingController::class, 'show']);
+Route::get('/seo-settings/{page?}', [SeoSettingController::class, 'show']);
 
 Route::post('/contact-messages', [ContactMessageController::class, 'store'])
     ->middleware('throttle:5,1');
