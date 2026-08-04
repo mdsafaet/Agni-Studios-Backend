@@ -52,6 +52,9 @@ class RustyPressKitAboutSectionController extends Controller
                                 $section->bottom_icon
                             )
                         : null,
+
+                'button_url' =>
+                    $section->button_url,
             ],
         ]);
     }
