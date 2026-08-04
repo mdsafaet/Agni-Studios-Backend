@@ -4,6 +4,7 @@ namespace App\Filament\Resources\RustyPressKitAboutSections\Schemas;
 
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
@@ -70,6 +71,15 @@ class RustyPressKitAboutSectionForm
                                 'public'
                             )
                             ->nullable(),
+
+
+                        TextInput::make('button_url')
+                            ->label('Button URL')
+                            ->placeholder('https://example.com')
+                            ->url()
+                            ->nullable()
+                            ->maxLength(2048)
+                            ->columnSpanFull(),
                     ])
                     ->columns(2)
                     ->columnSpanFull(),
