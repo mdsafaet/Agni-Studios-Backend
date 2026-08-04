@@ -63,8 +63,7 @@ class RustyPressKitHeroSectionResource extends Resource
 
     public static function canCreate(): bool
     {
-        return ! static::getModel()::query()
-            ->exists();
+  return true;
     }
 
     public static function getRelations(): array

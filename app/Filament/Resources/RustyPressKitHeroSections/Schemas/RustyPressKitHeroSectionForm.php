@@ -57,7 +57,7 @@ class RustyPressKitHeroSectionForm
                                 'Write each title line on a new line.'
                             )
                             ->rows(2)
-                            ->required()
+                            ->nullable()
                             ->maxLength(500),
 
                         TextInput::make(
@@ -69,7 +69,7 @@ class RustyPressKitHeroSectionForm
                             ->placeholder(
                                 'Press Kit'
                             )
-                            ->required()
+                            ->nullable()
                             ->maxLength(255),
                     ])
                     ->columns(2)
@@ -88,7 +88,7 @@ class RustyPressKitHeroSectionForm
                             ->placeholder(
                                 'Download Press Kit'
                             )
-                            ->required()
+                            ->nullable()
                             ->maxLength(255),
 
                         TextInput::make(
@@ -122,7 +122,7 @@ class RustyPressKitHeroSectionForm
                             ->default(
                                 'react_icon'
                             )
-                            ->required()
+                            ->nullable()
                             ->live(),
 
                         Select::make(
