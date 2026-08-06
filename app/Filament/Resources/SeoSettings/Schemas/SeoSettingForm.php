@@ -19,8 +19,8 @@ class SeoSettingForm
                     ->label('Page')
                     ->options([
                         'home' => 'Home (/)',
-                        'rusty-revolver' => 'Rusty Revolver',
-                        'rusty-revolver-press-kit' => 'Rusty Revolver Press Kit',
+                        'rusty-rampage' => 'Rusty Rampage',
+                        'rusty-rampage-press-kit' => 'Rusty Rampage Press Kit',
                     ])
                     ->required()
                     ->unique(ignoreRecord: true)
