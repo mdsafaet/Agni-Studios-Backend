@@ -8,6 +8,7 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Utilities\Get;
 
 class SeoSettingForm
 {
@@ -24,6 +25,7 @@ class SeoSettingForm
                     ])
                     ->required()
                     ->unique(ignoreRecord: true)
+                    ->live()
                     ->columnSpanFull(),
 
                 TextInput::make('site_title')
@@ -63,14 +65,16 @@ class SeoSettingForm
                     ->helperText('Enter the GA4 Measurement ID beginning with G-.')
                     ->regex('/^G-[A-Z0-9]+$/i')
                     ->nullable()
-                    ->maxLength(50),
+                    ->maxLength(50)
+                    ->visible(fn (Get $get): bool => $get('page_key') === 'home'),
 
                 TextInput::make('google_site_verification')
                     ->label('Google Site Verification')
                     ->placeholder('vXhip2CF4g39cmVX9LkT3oWOkCneZnHdUZWBotAsf7E')
                     ->helperText('Enter only the verification token, without google-site-verification=.')
                     ->nullable()
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->visible(fn (Get $get): bool => $get('page_key') === 'home'),
 
                 Toggle::make('is_active')
                     ->label('Active SEO Setting')
