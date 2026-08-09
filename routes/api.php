@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AboutSettingController;
+use App\Http\Controllers\Api\BrandSettingController;
 use App\Http\Controllers\Api\ContactMessageController;
 use App\Http\Controllers\Api\FooterController;
 use App\Http\Controllers\Api\GameSlideController;
@@ -38,6 +39,8 @@ Route::get('/game-slides', [GameSlideController::class, 'index',]);
 Route::get('/workflow-steps', [WorkflowStepController::class, 'index']);
 Route::get('/about-section', [AboutSettingController::class, 'show']);
 Route::get('/seo-settings/{page?}', [SeoSettingController::class, 'show']);
+
+Route::get('/brand-settings',[BrandSettingController::class, 'show']);
 
 Route::post('/contact-messages', [ContactMessageController::class, 'store'])
     ->middleware('throttle:5,1');
