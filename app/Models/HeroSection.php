@@ -9,6 +9,7 @@ class HeroSection extends Model
 {
     protected $fillable = [
         'media',
+          'alt_text',
         'is_active',
     ];
 

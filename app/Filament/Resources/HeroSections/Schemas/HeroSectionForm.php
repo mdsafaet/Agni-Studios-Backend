@@ -6,7 +6,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
-
+use Filament\Forms\Components\TextInput;
 class HeroSectionForm
 {
     public static function configure(Schema $schema): Schema
@@ -39,6 +39,18 @@ class HeroSectionForm
                             ->openable()
                             ->downloadable()
                             ->columnSpanFull(),
+
+                            TextInput::make('alt_text')
+    ->label('Hero Image Alt Text')
+    ->placeholder(
+        'Describe the hero image'
+    )
+    ->nullable()
+    ->maxLength(255)
+    ->helperText(
+        'Used for accessibility and image SEO.'
+    )
+    ->columnSpanFull(),
 
                         Toggle::make('is_active')
                             ->label('Active Hero')
