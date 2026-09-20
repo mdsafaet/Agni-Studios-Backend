@@ -34,7 +34,7 @@ class HeroSectionForm
                                 'video/webm',
                                 'video/quicktime',
                             ])
-                            ->maxSize(153600)
+                            ->maxSize(20480)
                             ->required()
                             ->openable()
                             ->downloadable()
