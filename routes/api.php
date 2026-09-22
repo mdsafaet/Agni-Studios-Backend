@@ -20,6 +20,7 @@ use App\Http\Controllers\Api\RustyPressKitLogoSectionController;
 use App\Http\Controllers\Api\RustyPressKitPressReleaseController;
 use App\Http\Controllers\Api\RustyPressKitScreenshotSectionController;
 use App\Http\Controllers\Api\RustyPressKitSectionController;
+use App\Http\Controllers\Api\RustyPressKitTrailerController;
 use App\Http\Controllers\Api\RustyRevolverBeatSlideController;
 use App\Http\Controllers\Api\RustyRevolverButtonController;
 use App\Http\Controllers\Api\RustyRevolverJoinSectionController;
@@ -68,9 +69,7 @@ Route::get('/rusty-revolver/press-kit/screenshots',[RustyPressKitScreenshotSecti
 Route::get('/rusty-revolver/press-kit/gifs',[RustyPressKitGifSectionController::class,'show', ]);
 Route::get('/rusty-revolver/press-kit/press-releases',[RustyPressKitPressReleaseController::class,'index',]);
 Route::get('/rusty-revolver/press-kit/contact-social-media',[RustyPressKitContactSocialSectionController::class,'show',]);
-
-
-
+Route::get('/rusty-revolver/press-kit/trailers',[RustyPressKitTrailerController::class, 'index']);
 
 
 
