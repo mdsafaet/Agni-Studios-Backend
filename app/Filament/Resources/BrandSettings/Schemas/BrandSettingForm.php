@@ -8,66 +8,46 @@ use Filament\Schemas\Schema;
 
 class BrandSettingForm
 {
-    public static function configure(
-        Schema $schema
-    ): Schema {
+    public static function configure(Schema $schema): Schema
+    {
         return $schema
             ->components([
-                Section::make(
-                    'Website Logo'
-                )
-                    ->description(
-                        'Upload the main website logo.'
-                    )
+                Section::make('Website Logo')
+                    ->description('Upload the main website logo.')
                     ->schema([
-                        FileUpload::make(
-                            'website_logo'
-                        )
-                            ->label(
-                                'Website Logo'
-                            )
+                        FileUpload::make('website_logo')
+                            ->label('Website Logo')
                             ->image()
                             ->disk('public')
-                            ->directory(
-                                'brand/logo'
-                            )
-                            ->visibility(
-                                'public'
-                            )
+                            ->directory('brand/logo')
+                            ->visibility('public')
                             ->imageEditor()
                             ->maxSize(5120)
                             ->required(),
                     ])
                     ->columnSpanFull(),
 
-                Section::make(
-                    'Website Favicon'
-                )
-                    ->description(
-                        'Upload the browser favicon.'
-                    )
+                Section::make('Website Favicon')
+                    ->description('Upload the browser favicon (square, cropped tight).')
                     ->schema([
-                        FileUpload::make(
-                            'favicon'
-                        )
-                            ->label(
-                                'Website Favicon'
-                            )
+                        FileUpload::make('favicon')
+                            ->label('Website Favicon')
+                            ->image()
                             ->disk('public')
-                            ->directory(
-                                'brand/favicon'
-                            )
-                            ->visibility(
-                                'public'
-                            )
+                            ->directory('brand/favicon')
+                            ->visibility('public')
                             ->acceptedFileTypes([
                                 'image/png',
-                                'image/x-icon',
-                                'image/vnd.microsoft.icon',
-                                'image/svg+xml',
                                 'image/webp',
                             ])
+                            ->imageEditor()
+                            ->imageEditorAspectRatios(['1:1'])
+                            ->imageCropAspectRatio('1:1')
+                            ->imageResizeMode('cover')
+                            ->imageResizeTargetWidth(512)
+                            ->imageResizeTargetHeight(512)
                             ->maxSize(2048)
+                            ->helperText('Square PNG, 512×512. Crop tight so the mark fills the frame.')
                             ->required(),
                     ])
                     ->columnSpanFull(),
